@@ -147,7 +147,10 @@ function awsn_email_body( $post, $subject ) {
 
 
 
-function get_node_html( $post_content, $node_id ) {
+// Future, make get_node_html function more generic.
+// Maybe add the ability to specify filters in the 
+// Settings panel.
+function awsn_get_node_html( $post_content, $node_id ) {
 
     $doc = new DOMDocument();
     libxml_use_internal_errors(true);
@@ -164,7 +167,7 @@ function get_node_html( $post_content, $node_id ) {
 }
 
 
-function get_node_plaintext( $post_content, $node_id ) {
+function awsn_get_node_plaintext( $post_content, $node_id ) {
 
     $doc = new DOMDocument();
     libxml_use_internal_errors(true);
@@ -196,6 +199,10 @@ function awsn_homepage_updated_recently() {
 }
 
 
+// awsn_email_array function currently returns all
+// users. In the future, maybe add ability to specify
+// individual users, or select all users in the 
+// Settings panel.
 function awsn_email_array() {
 
     $email_list = array(); 
